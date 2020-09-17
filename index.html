@@ -364,87 +364,23 @@
 
 
   
-    <article id="post-进展报告2020:03:20" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="陈晨2020-03-20"><a href="#陈晨2020-03-20" class="headerlink" title="陈晨2020/03/20"></a>陈晨2020/03/20</h1><h2 id="本周工作进展："><a href="#本周工作进展：" class="headerlink" title="本周工作进展："></a>本周工作进展：</h2><h3 id="1、校园网的DNS日志"><a href="#1、校园网的DNS日志" class="headerlink" title="1、校园网的DNS日志"></a>1、校园网的DNS日志</h3><p>通过张建强学长得到了校园网的DNS日志，量很大，每个单独日志文件2-3GB。</p>
-<p>![image-20200320004001000](/Users/chenchen/Library/Application Support/typora-user-images/image-20200320004001000.png)</p>
-<p>该日志为从ELK日志分析平台提取的，是json格式，用工具重新排列单条数据可以得到比较直观的认识。</p>
-<p><img src="/Users/chenchen/Documents/buaa%E7%A0%94%E7%A9%B6%E7%94%9F%E7%9B%B8%E5%85%B3%E6%96%87%E7%A8%BF/%E8%AF%BE%E9%A2%98%E7%BB%84/%E7%A0%94%E4%B8%80%E4%B8%8B/%E7%BB%84%E4%BC%9A%E6%8A%A5%E5%91%8A/WeChatd8c8e6b7a16a3b6b61984a02139f991a.png" alt="WeChatd8c8e6b7a16a3b6b61984a02139f991a"></p>
-<p>了解到目前只有这四个信息是有用的：</p>
-<ul>
-<li>@timestamp：时间戳</li>
-<li>host：来源服务器</li>
-<li>client：源IP</li>
-<li>qname：申请解析访问的域名</li>
-</ul>
-<p>对于这些DNS日志，接下来思考去如何利用，目前还在查资料。</p>
-<h3 id="2、ELK系统安装调试"><a href="#2、ELK系统安装调试" class="headerlink" title="2、ELK系统安装调试"></a>2、ELK系统安装调试</h3><h3 id="软件下载安装配置"><a href="#软件下载安装配置" class="headerlink" title="软件下载安装配置"></a>软件下载安装配置</h3><h3 id="环境："><a href="#环境：" class="headerlink" title="环境："></a>环境：</h3><ul>
-<li>Centos7/64bit</li>
-<li>Java1.8</li>
-<li>elasticsearch-6.5.4</li>
-</ul>
-<p><strong>修改一些配置项，修改完成后才能够正常启动</strong></p>
-<p><img src="/Users/chenchen/Documents/buaa%E7%A0%94%E7%A9%B6%E7%94%9F%E7%9B%B8%E5%85%B3%E6%96%87%E7%A8%BF/%E8%AF%BE%E9%A2%98%E7%BB%84/%E7%A0%94%E4%B8%80%E4%B8%8B/%E7%BB%84%E4%BC%9A%E6%8A%A5%E5%91%8A/WeChat372f8f117e3e8f78e7c58c93362ace24.png" alt="WeChat372f8f117e3e8f78e7c58c93362ace24"></p>
-<p>Chrome安装<strong>Elasticsearch-head和Restful client插件</strong>，并分别学习实现了以下操作：</p>
-<ul>
-<li>创建、删除索引</li>
-<li>插入数据</li>
-<li>删除数据</li>
-<li>搜索数据</li>
-</ul>
-<p><img src="/Users/chenchen/Documents/buaa%E7%A0%94%E7%A9%B6%E7%94%9F%E7%9B%B8%E5%85%B3%E6%96%87%E7%A8%BF/%E8%AF%BE%E9%A2%98%E7%BB%84/%E7%A0%94%E4%B8%80%E4%B8%8B/%E7%BB%84%E4%BC%9A%E6%8A%A5%E5%91%8A/WeChatac26a24a3c1251cc902f916e0e2ca003.png" alt="WeChatac26a24a3c1251cc902f916e0e2ca003"></p>
-<h3 id="3、这周和接下来几周的《web安全》课程小组作业和个人大作业花费较多时间"><a href="#3、这周和接下来几周的《web安全》课程小组作业和个人大作业花费较多时间" class="headerlink" title="3、这周和接下来几周的《web安全》课程小组作业和个人大作业花费较多时间"></a>3、这周和接下来几周的《web安全》课程小组作业和个人大作业花费较多时间</h3><h2 id="下周工作展望："><a href="#下周工作展望：" class="headerlink" title="下周工作展望："></a>下周工作展望：</h2><ul>
-<li><p>阅读文献《Experience Report: System Log Analysis for</p>
-<p>Anomaly Detection》（作者是香港大学、香港大学深圳研究院的，2016 IEEE 27th International Symposium on Software Reliability Engineering）</p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/20/%E8%BF%9B%E5%B1%95%E6%8A%A5%E5%91%8A2020:03:20/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-新手理解HTML、JavaScript、CSS之间的关系" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/16/%E6%96%B0%E6%89%8B%E7%90%86%E8%A7%A3HTML%E3%80%81JavaScript%E3%80%81CSS%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/">新手理解HTML、JavaScript、CSS之间的关系</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/16/%E6%96%B0%E6%89%8B%E7%90%86%E8%A7%A3HTML%E3%80%81JavaScript%E3%80%81CSS%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/" class="archive-article-date">
+  	<time datetime="2020-05-16T14:32:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-16</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -493,112 +429,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/15/%E6%96%B0%E6%89%8B%E7%90%86%E8%A7%A3HTML%E3%80%81JavaScript%E3%80%81CSS%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-oasisi-node踩坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="初始化节点"><a href="#初始化节点" class="headerlink" title="初始化节点"></a>初始化节点</h3><p>要初始化验证器节点，请记下您的节点将在其中运行的服务器的静态IP，并从<code>/localhostdir/node</code>目录中发出以下命令 ：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">STATIC_IP=&lt;YOUR-STATIC-IP&gt; <span class="comment">#假设你的server地址为192.168.1.1，那么就把“&lt;YOUR-STATIC-IP&gt;”替换为“192.168.1.1”</span></span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">oasis-node registry node init \</span><br><span class="line">  --signer file \</span><br><span class="line">  --signer.dir ../entity \ <span class="comment">##这里把官网的“localhostdir”换成“..”表示上级目录的entity目录，因为按照官网的做法会因为找不到entity目录而报错</span></span><br><span class="line">  --node.consensus_address <span class="variable">$STATIC_IP</span>:26656 \</span><br><span class="line">  --node.is_self_signed \</span><br><span class="line">  --node.role validator</span><br></pre></td></tr></table></figure>
-
-<p>若按照官网的执行命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">oasis-node registry node init \</span><br><span class="line">  --signer file \</span><br><span class="line">  --signer.dir /localhostdir/entity \</span><br><span class="line">  --node.consensus_address <span class="variable">$STATIC_IP</span>:26656 \</span><br><span class="line">  --node.is_self_signed \</span><br><span class="line">  --node.role validator</span><br></pre></td></tr></table></figure>
-
-<p>则报错：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ts=2020-03-04T05:05:58.474236972Z level=error module=cmd/registry/node <span class="built_in">caller</span>=node.go:138 msg=<span class="string">&quot;failed to load entity&quot;</span> err=<span class="string">&quot;file does not exist&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">oasis-node registry entity update \</span><br><span class="line">  --signer.dir ../entity \ <span class="comment">##同上</span></span><br><span class="line">  --entity.node.descriptor node_genesis.json</span><br></pre></td></tr></table></figure>
-
-<p>若按照官网的执行命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">oasis-node registry entity update \</span><br><span class="line">  --signer.dir /localhostdir/entity \</span><br><span class="line">  --entity.node.descriptor node_genesis.json</span><br></pre></td></tr></table></figure>
-
-<p>则会报错：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ts=2020-03-04T05:19:22.29317851Z level=error module=cmd/registry/entity <span class="built_in">caller</span>=entity.go:153 msg=<span class="string">&quot;failed to load entity&quot;</span> err=<span class="string">&quot;file does not exist&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>接下来进到server虚拟机的命令行：</p>
-<h2 id="Running-an-Oasis-Node-on-the-server"><a href="#Running-an-Oasis-Node-on-the-server" class="headerlink" title="Running an Oasis Node on the server"></a>Running an Oasis Node on the <code>server</code></h2><h3 id="设置Oasis节点的工作目录"><a href="#设置Oasis节点的工作目录" class="headerlink" title="设置Oasis节点的工作目录"></a>设置Oasis节点的工作目录</h3><p>在节点上运行节点之前，<code>server</code>我们需要确保有一个地方可以存储该节点的必要文件。</p>
-<h4 id="设置-serverdir目录"><a href="#设置-serverdir目录" class="headerlink" title="设置/serverdir目录"></a>设置<code>/serverdir</code>目录</h4><p>在<code>/serverdir</code>目录中，我们将创建以下子目录：</p>
-<ul>
-<li><code>etc/</code> -这是存储配置</li>
-<li><code>node/</code> -这是存储节点的数据</li>
-<li><code>node/entity/</code> -这是存储节点实体的公共组件</li>
-</ul>
-<p>在我的实践中若按照官网的创建命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -m700 -p /serverdir/&#123;etc,node,node/entity&#125;</span><br></pre></td></tr></table></figure>
-
-<p>发现输入完也无法建立，多次尝试发现因为多了个“/”，以下是成功的尝试：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -m700 -p serverdir/&#123;etc,node,node/entity&#125;</span><br></pre></td></tr></table></figure>
-
-<p>学到了一个命令：</p>
-<p>&lt;&lt; EOF &gt;config.yml</p>
-<p>（然后复制内容到这里）</p>
-<p>EOF#最后在输入EOF退出，系统就生成了一个config.yml文件</p>
-<h4 id="Configuring-the-Oasis-Node"><a href="#Configuring-the-Oasis-Node" class="headerlink" title="Configuring the Oasis Node"></a>Configuring the Oasis Node</h4><p>config.yml中的</p>
-<p><code>&#123;&#123; external_address &#125;&#125;</code>应该是server连上网络的的ip，命令行输入ifconfig可看到</p>
-<p><code>&#123;&#123; seed_node_address &#125;&#125;</code>:要改成下面的这个种子地址</p>
-<ul>
-<li><code>D14B9192C94F437E9FA92A755D3CC0341F2E87CF@34.82.86.53:26656</code></li>
-</ul>
-<p>  line 19: cannot unmarshal !!str <code>datadir...</code> into map[string]interface {} </p>
-<h3 id="启动Oasis节点"><a href="#启动Oasis节点" class="headerlink" title="启动Oasis节点"></a>启动Oasis节点</h3><p>通过运行以下命令来启动节点（此时在serverdir目录下）：</p>
-<p>官网的指南：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oasis-node --config /serverdir/etc/config.yml</span><br></pre></td></tr></table></figure>
-
-<p>这样输入会说找不到目录</p>
-<p>应该这样：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oasis-node --config etc/config.yml</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/04/oasisi-node%E8%B8%A9%E5%9D%91/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/05/16/%E6%96%B0%E6%89%8B%E7%90%86%E8%A7%A3HTML%E3%80%81JavaScript%E3%80%81CSS%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/">展开全文 >></a>
         </p>
       
 
@@ -630,6 +461,21 @@
   
     <article id="post-如何在Oasis网络上为Quest进行节点设置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/16/%E5%A6%82%E4%BD%95%E5%9C%A8Oasis%E7%BD%91%E7%BB%9C%E4%B8%8A%E4%B8%BAQuest%E8%BF%9B%E8%A1%8C%E8%8A%82%E7%82%B9%E8%AE%BE%E7%BD%AE/">如何在Oasis网络上为Quest进行节点设置</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/16/%E5%A6%82%E4%BD%95%E5%9C%A8Oasis%E7%BD%91%E7%BB%9C%E4%B8%8A%E4%B8%BAQuest%E8%BF%9B%E8%A1%8C%E8%8A%82%E7%82%B9%E8%AE%BE%E7%BD%AE/" class="archive-article-date">
+  	<time datetime="2020-04-16T14:32:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-16</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -857,7 +703,101 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/29/%E5%A6%82%E4%BD%95%E5%9C%A8Oasis%E7%BD%91%E7%BB%9C%E4%B8%8A%E4%B8%BAQuest%E8%BF%9B%E8%A1%8C%E8%8A%82%E7%82%B9%E8%AE%BE%E7%BD%AE/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/04/16/%E5%A6%82%E4%BD%95%E5%9C%A8Oasis%E7%BD%91%E7%BB%9C%E4%B8%8A%E4%B8%BAQuest%E8%BF%9B%E8%A1%8C%E8%8A%82%E7%82%B9%E8%AE%BE%E7%BD%AE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-进展报告2020:03:20" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/20/%E8%BF%9B%E5%B1%95%E6%8A%A5%E5%91%8A2020:03:20/">进展报告</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/20/%E8%BF%9B%E5%B1%95%E6%8A%A5%E5%91%8A2020:03:20/" class="archive-article-date">
+  	<time datetime="2020-03-20T14:32:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="陈晨2020-03-20"><a href="#陈晨2020-03-20" class="headerlink" title="陈晨2020/03/20"></a>陈晨2020/03/20</h1><h2 id="本周工作进展："><a href="#本周工作进展：" class="headerlink" title="本周工作进展："></a>本周工作进展：</h2><h3 id="1、校园网的DNS日志"><a href="#1、校园网的DNS日志" class="headerlink" title="1、校园网的DNS日志"></a>1、校园网的DNS日志</h3><p>通过张建强学长得到了校园网的DNS日志，量很大，每个单独日志文件2-3GB。</p>
+<p>![image-20200320004001000](/Users/chenchen/Library/Application Support/typora-user-images/image-20200320004001000.png)</p>
+<p>该日志为从ELK日志分析平台提取的，是json格式，用工具重新排列单条数据可以得到比较直观的认识。</p>
+<p><img src="/Users/chenchen/Documents/buaa%E7%A0%94%E7%A9%B6%E7%94%9F%E7%9B%B8%E5%85%B3%E6%96%87%E7%A8%BF/%E8%AF%BE%E9%A2%98%E7%BB%84/%E7%A0%94%E4%B8%80%E4%B8%8B/%E7%BB%84%E4%BC%9A%E6%8A%A5%E5%91%8A/WeChatd8c8e6b7a16a3b6b61984a02139f991a.png" alt="WeChatd8c8e6b7a16a3b6b61984a02139f991a"></p>
+<p>了解到目前只有这四个信息是有用的：</p>
+<ul>
+<li>@timestamp：时间戳</li>
+<li>host：来源服务器</li>
+<li>client：源IP</li>
+<li>qname：申请解析访问的域名</li>
+</ul>
+<p>对于这些DNS日志，接下来思考去如何利用，目前还在查资料。</p>
+<h3 id="2、ELK系统安装调试"><a href="#2、ELK系统安装调试" class="headerlink" title="2、ELK系统安装调试"></a>2、ELK系统安装调试</h3><h3 id="软件下载安装配置"><a href="#软件下载安装配置" class="headerlink" title="软件下载安装配置"></a>软件下载安装配置</h3><h3 id="环境："><a href="#环境：" class="headerlink" title="环境："></a>环境：</h3><ul>
+<li>Centos7/64bit</li>
+<li>Java1.8</li>
+<li>elasticsearch-6.5.4</li>
+</ul>
+<p><strong>修改一些配置项，修改完成后才能够正常启动</strong></p>
+<p><img src="/Users/chenchen/Documents/buaa%E7%A0%94%E7%A9%B6%E7%94%9F%E7%9B%B8%E5%85%B3%E6%96%87%E7%A8%BF/%E8%AF%BE%E9%A2%98%E7%BB%84/%E7%A0%94%E4%B8%80%E4%B8%8B/%E7%BB%84%E4%BC%9A%E6%8A%A5%E5%91%8A/WeChat372f8f117e3e8f78e7c58c93362ace24.png" alt="WeChat372f8f117e3e8f78e7c58c93362ace24"></p>
+<p>Chrome安装<strong>Elasticsearch-head和Restful client插件</strong>，并分别学习实现了以下操作：</p>
+<ul>
+<li>创建、删除索引</li>
+<li>插入数据</li>
+<li>删除数据</li>
+<li>搜索数据</li>
+</ul>
+<p><img src="/Users/chenchen/Documents/buaa%E7%A0%94%E7%A9%B6%E7%94%9F%E7%9B%B8%E5%85%B3%E6%96%87%E7%A8%BF/%E8%AF%BE%E9%A2%98%E7%BB%84/%E7%A0%94%E4%B8%80%E4%B8%8B/%E7%BB%84%E4%BC%9A%E6%8A%A5%E5%91%8A/WeChatac26a24a3c1251cc902f916e0e2ca003.png" alt="WeChatac26a24a3c1251cc902f916e0e2ca003"></p>
+<h3 id="3、这周和接下来几周的《web安全》课程小组作业和个人大作业花费较多时间"><a href="#3、这周和接下来几周的《web安全》课程小组作业和个人大作业花费较多时间" class="headerlink" title="3、这周和接下来几周的《web安全》课程小组作业和个人大作业花费较多时间"></a>3、这周和接下来几周的《web安全》课程小组作业和个人大作业花费较多时间</h3><h2 id="下周工作展望："><a href="#下周工作展望：" class="headerlink" title="下周工作展望："></a>下周工作展望：</h2><ul>
+<li><p>阅读文献《Experience Report: System Log Analysis for</p>
+<p>Anomaly Detection》（作者是香港大学、香港大学深圳研究院的，2016 IEEE 27th International Symposium on Software Reliability Engineering）</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/20/%E8%BF%9B%E5%B1%95%E6%8A%A5%E5%91%8A2020:03:20/">展开全文 >></a>
         </p>
       
 
@@ -1082,7 +1022,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat id_rsa.pub</span><br></pre></td></tr></table></figure>
 
 <p>接下来会出现一串以<strong>ssh-rsa</strong>开头的字符串例如：</p>
-<p><strong>ssh-rsa AXXXB3NzaC1yc2XXXiL+ytQ/r8cwouFVky9gyezQQw98Lw7Ji9BCljS28mGT7+/8BzxEjuxYXXXXXXXO5YQOTJkefjSZxusS71YwsQgEsLq3jx4uyDjc/DS3R5lWSydhDoXLdKQWEzd6Oe1COUzaH8+NA8TKQvYUm0gghXXXXXXY5J/M4tN4Pr73VKe5BzHytcvMkKk94Zst0Dvy707GJdOt30dJ7N <a href="mailto:&#x58;&#88;&#x58;&#64;&#x58;&#x58;&#88;&#77;&#x61;&#x63;&#x42;&#111;&#x6f;&#x6b;&#45;&#x50;&#x72;&#x6f;&#46;&#x6c;&#x6f;&#99;&#x61;&#108;">&#x58;&#88;&#x58;&#64;&#x58;&#x58;&#88;&#77;&#x61;&#x63;&#x42;&#111;&#x6f;&#x6b;&#45;&#x50;&#x72;&#x6f;&#46;&#x6c;&#x6f;&#99;&#x61;&#108;</a></strong></p>
+<p><strong>ssh-rsa AXXXB3NzaC1yc2XXXiL+ytQ/r8cwouFVky9gyezQQw98Lw7Ji9BCljS28mGT7+/8BzxEjuxYXXXXXXXO5YQOTJkefjSZxusS71YwsQgEsLq3jx4uyDjc/DS3R5lWSydhDoXLdKQWEzd6Oe1COUzaH8+NA8TKQvYUm0gghXXXXXXY5J/M4tN4Pr73VKe5BzHytcvMkKk94Zst0Dvy707GJdOt30dJ7N <a href="mailto:&#88;&#x58;&#88;&#64;&#x58;&#88;&#88;&#77;&#97;&#99;&#x42;&#x6f;&#111;&#x6b;&#x2d;&#x50;&#114;&#x6f;&#x2e;&#108;&#111;&#99;&#x61;&#108;">&#88;&#x58;&#88;&#64;&#x58;&#88;&#88;&#77;&#97;&#99;&#x42;&#x6f;&#111;&#x6b;&#x2d;&#x50;&#114;&#x6f;&#x2e;&#108;&#111;&#99;&#x61;&#108;</a></strong></p>
 <p>将这段字符串复制，进入GitHub主业，点击右上角头像进入settings，选择SSH and GPG keys，再点击New SSH Key。将内容复制进key，title可以为空。最后Add SSH key，点击后会让你输入你的GitHub账户密码，正确输入后一般来说就成功了</p>
 <h2 id="通过如下命令进行测试是否成功"><a href="#通过如下命令进行测试是否成功" class="headerlink" title="通过如下命令进行测试是否成功"></a>通过如下命令进行测试是否成功</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@GitHub.com #全部复制，无需更改</span><br></pre></td></tr></table></figure>
 
@@ -1245,6 +1185,126 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/02/28/hello-world/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-oasisi-node踩坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/16/oasisi-node%E8%B8%A9%E5%9D%91/">初始化节点</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/16/oasisi-node%E8%B8%A9%E5%9D%91/" class="archive-article-date">
+  	<time datetime="2020-02-16T14:32:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="初始化节点"><a href="#初始化节点" class="headerlink" title="初始化节点"></a>初始化节点</h3><p>要初始化验证器节点，请记下您的节点将在其中运行的服务器的静态IP，并从<code>/localhostdir/node</code>目录中发出以下命令 ：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">STATIC_IP=&lt;YOUR-STATIC-IP&gt; <span class="comment">#假设你的server地址为192.168.1.1，那么就把“&lt;YOUR-STATIC-IP&gt;”替换为“192.168.1.1”</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">oasis-node registry node init \</span><br><span class="line">  --signer file \</span><br><span class="line">  --signer.dir ../entity \ <span class="comment">##这里把官网的“localhostdir”换成“..”表示上级目录的entity目录，因为按照官网的做法会因为找不到entity目录而报错</span></span><br><span class="line">  --node.consensus_address <span class="variable">$STATIC_IP</span>:26656 \</span><br><span class="line">  --node.is_self_signed \</span><br><span class="line">  --node.role validator</span><br></pre></td></tr></table></figure>
+
+<p>若按照官网的执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">oasis-node registry node init \</span><br><span class="line">  --signer file \</span><br><span class="line">  --signer.dir /localhostdir/entity \</span><br><span class="line">  --node.consensus_address <span class="variable">$STATIC_IP</span>:26656 \</span><br><span class="line">  --node.is_self_signed \</span><br><span class="line">  --node.role validator</span><br></pre></td></tr></table></figure>
+
+<p>则报错：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ts=2020-03-04T05:05:58.474236972Z level=error module=cmd/registry/node <span class="built_in">caller</span>=node.go:138 msg=<span class="string">&quot;failed to load entity&quot;</span> err=<span class="string">&quot;file does not exist&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">oasis-node registry entity update \</span><br><span class="line">  --signer.dir ../entity \ <span class="comment">##同上</span></span><br><span class="line">  --entity.node.descriptor node_genesis.json</span><br></pre></td></tr></table></figure>
+
+<p>若按照官网的执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">oasis-node registry entity update \</span><br><span class="line">  --signer.dir /localhostdir/entity \</span><br><span class="line">  --entity.node.descriptor node_genesis.json</span><br></pre></td></tr></table></figure>
+
+<p>则会报错：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ts=2020-03-04T05:19:22.29317851Z level=error module=cmd/registry/entity <span class="built_in">caller</span>=entity.go:153 msg=<span class="string">&quot;failed to load entity&quot;</span> err=<span class="string">&quot;file does not exist&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>接下来进到server虚拟机的命令行：</p>
+<h2 id="Running-an-Oasis-Node-on-the-server"><a href="#Running-an-Oasis-Node-on-the-server" class="headerlink" title="Running an Oasis Node on the server"></a>Running an Oasis Node on the <code>server</code></h2><h3 id="设置Oasis节点的工作目录"><a href="#设置Oasis节点的工作目录" class="headerlink" title="设置Oasis节点的工作目录"></a>设置Oasis节点的工作目录</h3><p>在节点上运行节点之前，<code>server</code>我们需要确保有一个地方可以存储该节点的必要文件。</p>
+<h4 id="设置-serverdir目录"><a href="#设置-serverdir目录" class="headerlink" title="设置/serverdir目录"></a>设置<code>/serverdir</code>目录</h4><p>在<code>/serverdir</code>目录中，我们将创建以下子目录：</p>
+<ul>
+<li><code>etc/</code> -这是存储配置</li>
+<li><code>node/</code> -这是存储节点的数据</li>
+<li><code>node/entity/</code> -这是存储节点实体的公共组件</li>
+</ul>
+<p>在我的实践中若按照官网的创建命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -m700 -p /serverdir/&#123;etc,node,node/entity&#125;</span><br></pre></td></tr></table></figure>
+
+<p>发现输入完也无法建立，多次尝试发现因为多了个“/”，以下是成功的尝试：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -m700 -p serverdir/&#123;etc,node,node/entity&#125;</span><br></pre></td></tr></table></figure>
+
+<p>学到了一个命令：</p>
+<p>&lt;&lt; EOF &gt;config.yml</p>
+<p>（然后复制内容到这里）</p>
+<p>EOF#最后在输入EOF退出，系统就生成了一个config.yml文件</p>
+<h4 id="Configuring-the-Oasis-Node"><a href="#Configuring-the-Oasis-Node" class="headerlink" title="Configuring the Oasis Node"></a>Configuring the Oasis Node</h4><p>config.yml中的</p>
+<p><code>&#123;&#123; external_address &#125;&#125;</code>应该是server连上网络的的ip，命令行输入ifconfig可看到</p>
+<p><code>&#123;&#123; seed_node_address &#125;&#125;</code>:要改成下面的这个种子地址</p>
+<ul>
+<li><code>D14B9192C94F437E9FA92A755D3CC0341F2E87CF@34.82.86.53:26656</code></li>
+</ul>
+<p>  line 19: cannot unmarshal !!str <code>datadir...</code> into map[string]interface {} </p>
+<h3 id="启动Oasis节点"><a href="#启动Oasis节点" class="headerlink" title="启动Oasis节点"></a>启动Oasis节点</h3><p>通过运行以下命令来启动节点（此时在serverdir目录下）：</p>
+<p>官网的指南：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oasis-node --config /serverdir/etc/config.yml</span><br></pre></td></tr></table></figure>
+
+<p>这样输入会说找不到目录</p>
+<p>应该这样：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oasis-node --config etc/config.yml</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/16/oasisi-node%E8%B8%A9%E5%9D%91/">展开全文 >></a>
         </p>
       
 
