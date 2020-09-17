@@ -6,18 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>陈晨个人博客</title>
+  <title>有状态流处理 | 陈晨个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一点学习笔记">
-<meta property="og:type" content="website">
-<meta property="og:title" content="陈晨个人博客">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="有状态流处理 What is State? Keyed State State Persistence Checkpointing State Backends Savepoints Exactly Once vs. At Least Once   State and Fault Tolerance in Batch Programs  What is State?虽然数据流中的许多操作一次只看一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="有状态流处理">
+<meta property="og:url" content="http://example.com/2020/09/17/%E6%9C%89%E7%8A%B6%E6%80%81%E6%B5%81%E5%A4%84%E7%90%86/index.html">
 <meta property="og:site_name" content="陈晨个人博客">
-<meta property="og:description" content="一点学习笔记">
+<meta property="og:description" content="有状态流处理 What is State? Keyed State State Persistence Checkpointing State Backends Savepoints Exactly Once vs. At Least Once   State and Fault Tolerance in Batch Programs  What is State?虽然数据流中的许多操作一次只看一">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ci.apache.org/projects/flink/flink-docs-release-1.11/fig/state_partitioning.svg">
+<meta property="og:image" content="https://ci.apache.org/projects/flink/flink-docs-release-1.11/fig/stream_barriers.svg">
+<meta property="og:image" content="https://ci.apache.org/projects/flink/flink-docs-release-1.11/fig/stream_aligning.svg">
+<meta property="og:image" content="https://ci.apache.org/projects/flink/flink-docs-release-1.11/fig/checkpointing.svg">
+<meta property="og:image" content="https://ci.apache.org/projects/flink/flink-docs-release-1.11/fig/checkpoints.svg">
+<meta property="article:published_time" content="2020-09-17T01:41:26.000Z">
+<meta property="article:modified_time" content="2020-09-17T01:41:52.466Z">
 <meta property="article:author" content="Ccoverflow">
 <meta property="article:tag" content="流式计算,java,node.js,ELK,大数据,">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ci.apache.org/projects/flink/flink-docs-release-1.11/fig/state_partitioning.svg">
   
     <link rel="alternative" href="/atom.xml" title="陈晨个人博客" type="application/atom+xml">
   
@@ -157,16 +165,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-有状态流处理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-有状态流处理" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/17/%E6%9C%89%E7%8A%B6%E6%80%81%E6%B5%81%E5%A4%84%E7%90%86/">有状态流处理</a>
+    <h1 class="article-title" itemprop="name">
+      有状态流处理
     </h1>
   
 
@@ -264,6 +270,27 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -271,16 +298,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/17/%E6%9C%89%E7%8A%B6%E6%80%81%E6%B5%81%E5%A4%84%E7%90%86/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/09/17/%E6%9C%89%E7%8A%B6%E6%80%81%E6%B5%81%E5%A4%84%E7%90%86/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/16/Hello-WeiQing/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello_WeiQing</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -300,980 +386,14 @@
 
 
 
-
   
-    <article id="post-Hello-WeiQing" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/16/Hello-WeiQing/">Hello_WeiQing</a>
-    </h1>
   
 
-        
-        <a href="/2020/09/16/Hello-WeiQing/" class="archive-article-date">
-  	<time datetime="2020-09-16T14:32:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="韦晴你好"><a href="#韦晴你好" class="headerlink" title="韦晴你好"></a>韦晴你好</h1><h2 id="距离我们-2020-06-19-相识已89天"><a href="#距离我们-2020-06-19-相识已89天" class="headerlink" title="距离我们 2020/06/19 相识已89天"></a>距离我们 2020/06/19 相识已89天</h2><h3 id="加油！"><a href="#加油！" class="headerlink" title="加油！"></a>加油！</h3>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/16/Hello-WeiQing/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-进展报告2020:03:20" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="陈晨2020-03-20"><a href="#陈晨2020-03-20" class="headerlink" title="陈晨2020/03/20"></a>陈晨2020/03/20</h1><h2 id="本周工作进展："><a href="#本周工作进展：" class="headerlink" title="本周工作进展："></a>本周工作进展：</h2><h3 id="1、校园网的DNS日志"><a href="#1、校园网的DNS日志" class="headerlink" title="1、校园网的DNS日志"></a>1、校园网的DNS日志</h3><p>通过张建强学长得到了校园网的DNS日志，量很大，每个单独日志文件2-3GB。</p>
-<p>![image-20200320004001000](/Users/chenchen/Library/Application Support/typora-user-images/image-20200320004001000.png)</p>
-<p>该日志为从ELK日志分析平台提取的，是json格式，用工具重新排列单条数据可以得到比较直观的认识。</p>
-<p><img src="/Users/chenchen/Documents/buaa%E7%A0%94%E7%A9%B6%E7%94%9F%E7%9B%B8%E5%85%B3%E6%96%87%E7%A8%BF/%E8%AF%BE%E9%A2%98%E7%BB%84/%E7%A0%94%E4%B8%80%E4%B8%8B/%E7%BB%84%E4%BC%9A%E6%8A%A5%E5%91%8A/WeChatd8c8e6b7a16a3b6b61984a02139f991a.png" alt="WeChatd8c8e6b7a16a3b6b61984a02139f991a"></p>
-<p>了解到目前只有这四个信息是有用的：</p>
-<ul>
-<li>@timestamp：时间戳</li>
-<li>host：来源服务器</li>
-<li>client：源IP</li>
-<li>qname：申请解析访问的域名</li>
-</ul>
-<p>对于这些DNS日志，接下来思考去如何利用，目前还在查资料。</p>
-<h3 id="2、ELK系统安装调试"><a href="#2、ELK系统安装调试" class="headerlink" title="2、ELK系统安装调试"></a>2、ELK系统安装调试</h3><h3 id="软件下载安装配置"><a href="#软件下载安装配置" class="headerlink" title="软件下载安装配置"></a>软件下载安装配置</h3><h3 id="环境："><a href="#环境：" class="headerlink" title="环境："></a>环境：</h3><ul>
-<li>Centos7/64bit</li>
-<li>Java1.8</li>
-<li>elasticsearch-6.5.4</li>
-</ul>
-<p><strong>修改一些配置项，修改完成后才能够正常启动</strong></p>
-<p><img src="/Users/chenchen/Documents/buaa%E7%A0%94%E7%A9%B6%E7%94%9F%E7%9B%B8%E5%85%B3%E6%96%87%E7%A8%BF/%E8%AF%BE%E9%A2%98%E7%BB%84/%E7%A0%94%E4%B8%80%E4%B8%8B/%E7%BB%84%E4%BC%9A%E6%8A%A5%E5%91%8A/WeChat372f8f117e3e8f78e7c58c93362ace24.png" alt="WeChat372f8f117e3e8f78e7c58c93362ace24"></p>
-<p>Chrome安装<strong>Elasticsearch-head和Restful client插件</strong>，并分别学习实现了以下操作：</p>
-<ul>
-<li>创建、删除索引</li>
-<li>插入数据</li>
-<li>删除数据</li>
-<li>搜索数据</li>
-</ul>
-<p><img src="/Users/chenchen/Documents/buaa%E7%A0%94%E7%A9%B6%E7%94%9F%E7%9B%B8%E5%85%B3%E6%96%87%E7%A8%BF/%E8%AF%BE%E9%A2%98%E7%BB%84/%E7%A0%94%E4%B8%80%E4%B8%8B/%E7%BB%84%E4%BC%9A%E6%8A%A5%E5%91%8A/WeChatac26a24a3c1251cc902f916e0e2ca003.png" alt="WeChatac26a24a3c1251cc902f916e0e2ca003"></p>
-<h3 id="3、这周和接下来几周的《web安全》课程小组作业和个人大作业花费较多时间"><a href="#3、这周和接下来几周的《web安全》课程小组作业和个人大作业花费较多时间" class="headerlink" title="3、这周和接下来几周的《web安全》课程小组作业和个人大作业花费较多时间"></a>3、这周和接下来几周的《web安全》课程小组作业和个人大作业花费较多时间</h3><h2 id="下周工作展望："><a href="#下周工作展望：" class="headerlink" title="下周工作展望："></a>下周工作展望：</h2><ul>
-<li><p>阅读文献《Experience Report: System Log Analysis for</p>
-<p>Anomaly Detection》（作者是香港大学、香港大学深圳研究院的，2016 IEEE 27th International Symposium on Software Reliability Engineering）</p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/20/%E8%BF%9B%E5%B1%95%E6%8A%A5%E5%91%8A2020:03:20/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-新手理解HTML、JavaScript、CSS之间的关系" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="新手理解HTML、JavaScript、CSS之间的关系"><a href="#新手理解HTML、JavaScript、CSS之间的关系" class="headerlink" title="新手理解HTML、JavaScript、CSS之间的关系"></a>新手理解HTML、JavaScript、CSS之间的关系</h1><p>最准确的网页设计思路是把网页分成三个层次，即：结构层（HTML）、表示层（CSS）、行为层（Javascript）</p>
-<h2 id="一、HTML、CSS、JavaScript简介及简单分工"><a href="#一、HTML、CSS、JavaScript简介及简单分工" class="headerlink" title="一、HTML、CSS、JavaScript简介及简单分工"></a>一、HTML、CSS、JavaScript简介及简单分工</h2><p>1、什么是HTML（超文本标记语言 Hyper Text Markup Language），HTML 是用来描述网页的一种语言。</p>
-<p>2、CSS（层叠样式表 Cascading Style Sheets），样式定义如何显示HTML元素，语法为：selector {property: value}（选择符 {属性：值}）。</p>
-<p>3、JavaScript 是一种脚本语言，其原大吗在发往客户端运行之前不需要经过编译，而是将文本格式的字符码发送给<strong>浏览器</strong>由浏览器解释运行。</p>
-<p>对于一个网页，HTML定义网页的结构，CSS描述网页的样子，JavaScript设置一个很经典的例子就是说，HTML就像一个人的骨骼、器官，而CSS就是人的皮肤，有了这两样也就构成了一个植物人了，加上javascript这个植物人就可以对外界刺激做出反应，可以思考、运动、可以给自己整容化妆（改变CSS）等等，成为一个活生生的人。</p>
-<p>如果说HTML是肉身、CSS就是皮相、Javascript就是灵魂。没有Javascript，HTML+CSS是植物人，没有Javascript、CSS，单纯的HTML则是个毁容的植物人。<br>如果说HTML是建筑师，CSS就是干装修的，Javascript是魔术师。</p>
-<p>怎么把这三者联系在一起呢，当然得通过网页的肉身HTML，HTML是一种描述语言，它是对着浏览器描述自己的，那么它通常怎么描述具体的这个网页呢？</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span> <span class="meta-keyword">PUBLIC</span> <span class="meta-string">&quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;</span> <span class="meta-string">&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.w3.org/1999/xhtml&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;Content-Type&quot;</span> <span class="attr">content</span>=<span class="string">&quot;text/html; charset=utf-8&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>网页标题<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;mycss.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;myjs.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>这是一个最简单的HTML文档，这个文档对浏览器说明，我是遵循W3C标准XHTML1.0过渡版本规范（文件类型声明），我采用的编码是<strong>utf-8</strong>，我的标题是“网页标题”，描述我的模样的样式表是我同目录的mycss.css文件，与我有关的javascript代码在我同级的myks.js文件中，我的内容有一个段落，段落的内容是“这是一个段落”。</p>
-<h2 id="二、HTML、CSS、JavaScript发展"><a href="#二、HTML、CSS、JavaScript发展" class="headerlink" title="二、HTML、CSS、JavaScript发展"></a>二、HTML、CSS、JavaScript发展</h2><h3 id="1、HTML的版本"><a href="#1、HTML的版本" class="headerlink" title="1、HTML的版本"></a>1、HTML的版本</h3><p>超文本标记语言（第一版）——在1993年6月作为互联网工程工作小组（IETF）工作草案发布（并非标准）：</p>
-<p>HTML 2.0——1995年11月作为RFC 1866发布，在RFC 2854于2000年6月发布之后被宣布已经过时<br>HTML 3.2——1997年1月14日，W3C推荐标准<br>HTML 4.0——1997年12月18日，W3C推荐标准<br>HTML 4.01（微小改进）——1999年12月24日，W3C推荐标准<br>HTML 5——2014年10月28日，W3C推荐标准[4] </p>
-<p>现在我们只说HTML 4.01和HTML5，因为2000年国际万维网联盟（W3C）公布发行了XHTML 1.0版本。XHTML 1.0是一种在HTML 4.0基础上优化和改进的的新语言，目的是基于XML应用。而XHTML 与 HTML 4.01 几乎是相同的，HTML从最初发展到XHTML的过程中变得更加的严谨，更加的灵活，与CSS结合的更好。原则上说现在能看到的大部分网页是使用HTML4或者HTML5这两个版本的。<br>**HTML5<br>**它是对HTML5的一次重大的修改，虽然HTML5 标准还在制定中，但不能阻碍其势不可挡的脚步，不用HTML5你就OUT了，我们经常为HTML5而HTML5，其实对于比较低端的前端（我这样的），特别是用div+CSS实现网页来说，真的改变不大。<br>那么，HTML5的精髓在哪呢？这个得单独说一下，请见《<a target="_blank" rel="noopener" href="http://www.cnblogs.com/dreamingbaobei/p/5062931.html">HTML5的入门与深入理解</a>》</p>
-<h3 id="2、CSS的版本"><a href="#2、CSS的版本" class="headerlink" title="2、CSS的版本"></a>2、CSS的版本</h3><p>1996年W3C正式推出了CSS1；<br>1998年W3C正式推出了CSS2；<br>CSS2.1是W3C现在正在推荐使用的；<br>CSS3现在还处于开发中。<br>如果说HTML的发展是一个不断修改的过程，那么CSS的发展就是一个不断补充的过程，所以在使用CSS的时候，不需要像HTML那行申明使用的标准，高版本的浏览器认识高版本的CSS定义，低版本的浏览器略过不认识的CSS定义。不管什么版本，CSS的语法很简单，选择器：{属性：属性值}，所以火爆的CSS3无外乎是扩展了选择器和属性。<br>CSS3新增的选择器和属性请见《<a target="_blank" rel="noopener" href="http://www.cnblogs.com/dreamingbaobei/p/5062998.html">CSS3新增的选择器和属性</a>》</p>
-<h3 id="3、JavaScript的前世今生"><a href="#3、JavaScript的前世今生" class="headerlink" title="3、JavaScript的前世今生"></a>3、JavaScript的前世今生</h3><p>JavaScript一种直译式脚本语言，它的解释器被称为JavaScript引擎，是浏览器的一部分，即：JavaScript是由客户端的浏览器解释执行的，所以在谈JavaScript的历史之前我们要先说一下浏览器，最早的web浏览器是创建于1991年的WorldWideWeb，后来改名为Nexus，之后出现了各类浏览器，直到1994年，网景公司（Netscape）发布了Navigator浏览器0.9版，这是历史上第一个比较成熟的网络浏览器，随后的1995年微软推出了<strong>IE浏览器</strong>，从此掀起了浏览器大战，微软采取操作系统捆绑IE浏览器，最终获得压倒性胜利，战争失利的Netscape在之后被收购、合并、解散。之后一段时间IE独领风骚，之后被Opera，Safari，Firefox，Chrome陆续瓜分掉一些市场份额，改变了一家独大的局面。</p>
-<p>但是谈到JavaScript的历史，必须提到一个公司和一个人，那就是Netscape公司及其员工Brendan Eich，网景公司在发布了Navigator之后，急于解决浏览器与用户交互这个问题，Javascript之父Brendan Eich只用了10天的时间发明了livescript(让我辈情何以堪），由于网景高层是java的粉丝，或者说为了抱上当时热炒的java的大腿，livescript更名为javascript，Brendan Eich他的思路是：</p>
-<ul>
-<li>借鉴C语言的基本语法；</li>
-<li>借鉴Java语言的数据类型和内存管理；</li>
-<li>借鉴Scheme语言，将函数提升到”第一等公民”（first class）的地位；</li>
-<li>借鉴<a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/Self_(programming_language)">Self语言</a>，使用基于原型（prototype）的继承机制。<br>所以，<strong>Javascript语言实际上是两种语言风格的混合产物—-（简化的）函数式编程+（简化的）面向对象编程</strong>。</li>
-</ul>
-<p>Javascript 1.0获得了巨大的成功，Netscape随后推出了1.1，之后作为竞争对手的微软在自家的 IE3 中加入了名为 JScript （名称不同是为了避免侵权）的JavaScript实现。由此JavaScript 的规范化被提上日程，1997年，以 JavaScript1.1 为蓝本的建议被提交给了 欧洲计算机制造商协会 （ECMA），ECMA牵头经过数月的努力完成了 ECMA-262 ——定义了一种名为 ECMAScript 的新脚本语言的标准。</p>
-<p>虽然 JavaScript 和 ECMAScript 通常被人用来表达相同的意思，但 JavaScript 的含义去比 ECMA-262 中规定的多得多。<br>一个完整的 JavaScript 实现应由三个部分组成：</p>
-<ul>
-<li><p>核心（ECMAScript）， 描述了该语言的语法和基本对象。</p>
-</li>
-<li><p>文档对象模型（DOM），描述处理网页内容的方法和接口。</p>
-</li>
-<li><p>浏览器对象模型（BOM），描述与浏览器进行交互的方法和接口。</p>
-</li>
-</ul>
-<p>1995年发明了Javascript，1997年就推出了国际标准，迫切需要浏览器与用户相互的情况下，javascript发展的太快了，Javascript的规格还没来及调整，就固化了。相比之下，C语言问世将近20年之后，国际标准才颁布。Javascript有很多缺陷，但是JavaScript 在前端地位无可替代，</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/15/%E6%96%B0%E6%89%8B%E7%90%86%E8%A7%A3HTML%E3%80%81JavaScript%E3%80%81CSS%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-oasisi-node踩坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="初始化节点"><a href="#初始化节点" class="headerlink" title="初始化节点"></a>初始化节点</h3><p>要初始化验证器节点，请记下您的节点将在其中运行的服务器的静态IP，并从<code>/localhostdir/node</code>目录中发出以下命令 ：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">STATIC_IP=&lt;YOUR-STATIC-IP&gt; <span class="comment">#假设你的server地址为192.168.1.1，那么就把“&lt;YOUR-STATIC-IP&gt;”替换为“192.168.1.1”</span></span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">oasis-node registry node init \</span><br><span class="line">  --signer file \</span><br><span class="line">  --signer.dir ../entity \ <span class="comment">##这里把官网的“localhostdir”换成“..”表示上级目录的entity目录，因为按照官网的做法会因为找不到entity目录而报错</span></span><br><span class="line">  --node.consensus_address <span class="variable">$STATIC_IP</span>:26656 \</span><br><span class="line">  --node.is_self_signed \</span><br><span class="line">  --node.role validator</span><br></pre></td></tr></table></figure>
-
-<p>若按照官网的执行命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">oasis-node registry node init \</span><br><span class="line">  --signer file \</span><br><span class="line">  --signer.dir /localhostdir/entity \</span><br><span class="line">  --node.consensus_address <span class="variable">$STATIC_IP</span>:26656 \</span><br><span class="line">  --node.is_self_signed \</span><br><span class="line">  --node.role validator</span><br></pre></td></tr></table></figure>
-
-<p>则报错：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ts=2020-03-04T05:05:58.474236972Z level=error module=cmd/registry/node <span class="built_in">caller</span>=node.go:138 msg=<span class="string">&quot;failed to load entity&quot;</span> err=<span class="string">&quot;file does not exist&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">oasis-node registry entity update \</span><br><span class="line">  --signer.dir ../entity \ <span class="comment">##同上</span></span><br><span class="line">  --entity.node.descriptor node_genesis.json</span><br></pre></td></tr></table></figure>
-
-<p>若按照官网的执行命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">oasis-node registry entity update \</span><br><span class="line">  --signer.dir /localhostdir/entity \</span><br><span class="line">  --entity.node.descriptor node_genesis.json</span><br></pre></td></tr></table></figure>
-
-<p>则会报错：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ts=2020-03-04T05:19:22.29317851Z level=error module=cmd/registry/entity <span class="built_in">caller</span>=entity.go:153 msg=<span class="string">&quot;failed to load entity&quot;</span> err=<span class="string">&quot;file does not exist&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>接下来进到server虚拟机的命令行：</p>
-<h2 id="Running-an-Oasis-Node-on-the-server"><a href="#Running-an-Oasis-Node-on-the-server" class="headerlink" title="Running an Oasis Node on the server"></a>Running an Oasis Node on the <code>server</code></h2><h3 id="设置Oasis节点的工作目录"><a href="#设置Oasis节点的工作目录" class="headerlink" title="设置Oasis节点的工作目录"></a>设置Oasis节点的工作目录</h3><p>在节点上运行节点之前，<code>server</code>我们需要确保有一个地方可以存储该节点的必要文件。</p>
-<h4 id="设置-serverdir目录"><a href="#设置-serverdir目录" class="headerlink" title="设置/serverdir目录"></a>设置<code>/serverdir</code>目录</h4><p>在<code>/serverdir</code>目录中，我们将创建以下子目录：</p>
-<ul>
-<li><code>etc/</code> -这是存储配置</li>
-<li><code>node/</code> -这是存储节点的数据</li>
-<li><code>node/entity/</code> -这是存储节点实体的公共组件</li>
-</ul>
-<p>在我的实践中若按照官网的创建命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -m700 -p /serverdir/&#123;etc,node,node/entity&#125;</span><br></pre></td></tr></table></figure>
-
-<p>发现输入完也无法建立，多次尝试发现因为多了个“/”，以下是成功的尝试：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -m700 -p serverdir/&#123;etc,node,node/entity&#125;</span><br></pre></td></tr></table></figure>
-
-<p>学到了一个命令：</p>
-<p>&lt;&lt; EOF &gt;config.yml</p>
-<p>（然后复制内容到这里）</p>
-<p>EOF#最后在输入EOF退出，系统就生成了一个config.yml文件</p>
-<h4 id="Configuring-the-Oasis-Node"><a href="#Configuring-the-Oasis-Node" class="headerlink" title="Configuring the Oasis Node"></a>Configuring the Oasis Node</h4><p>config.yml中的</p>
-<p><code>&#123;&#123; external_address &#125;&#125;</code>应该是server连上网络的的ip，命令行输入ifconfig可看到</p>
-<p><code>&#123;&#123; seed_node_address &#125;&#125;</code>:要改成下面的这个种子地址</p>
-<ul>
-<li><code>D14B9192C94F437E9FA92A755D3CC0341F2E87CF@34.82.86.53:26656</code></li>
-</ul>
-<p>  line 19: cannot unmarshal !!str <code>datadir...</code> into map[string]interface {} </p>
-<h3 id="启动Oasis节点"><a href="#启动Oasis节点" class="headerlink" title="启动Oasis节点"></a>启动Oasis节点</h3><p>通过运行以下命令来启动节点（此时在serverdir目录下）：</p>
-<p>官网的指南：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oasis-node --config /serverdir/etc/config.yml</span><br></pre></td></tr></table></figure>
-
-<p>这样输入会说找不到目录</p>
-<p>应该这样：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oasis-node --config etc/config.yml</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/04/oasisi-node%E8%B8%A9%E5%9D%91/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-如何在Oasis网络上为Quest进行节点设置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="如何在Oasis网络上为Quest进行节点设置"><a href="#如何在Oasis网络上为Quest进行节点设置" class="headerlink" title="如何在Oasis网络上为Quest进行节点设置"></a>如何在Oasis网络上为Quest进行节点设置</h1><p>This guide will cover setting up your nodes for The Quest, a multi-round staking competition (aka incentivized testnet) on the Oasis Network. 它假定你对命令行工具的使用有一定的基础知识。</p>
-<h2 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h2><p>本指南假设你有两个用于部署的不同物理机器。这些机器如下:</p>
-<ul>
-<li>你的本地系统，称为<code>localhost</code></li>
-<li>远程系统，作为Oasis节点运行的系统，称为<code>server</code></li>
-</ul>
-<p>这样做的原因是为了确保用于设置节点的密钥得到保护。本指南不包括HSMs的使用，但是将来也要使用到它们。</p>
-<h2 id="创建实体（Entity）"><a href="#创建实体（Entity）" class="headerlink" title="创建实体（Entity）"></a>创建实体（Entity）</h2><p><strong>注意</strong>：本节中的所有操作都应该在本地主机localhost上完成，因为有些敏感项会创建。</p>
-<h3 id="创建一个工作目录"><a href="#创建一个工作目录" class="headerlink" title="创建一个工作目录"></a>创建一个工作目录</h3><p>在这个实体初始化过程中，我们将创建密钥和其他重要的组件，用于网络上部署节点。如果你打算使用这个生成的组件来注册实体和节点，那么在这个目录中保存和保护它们是很重要的。</p>
-<p> <strong>注意</strong>：我们将localhost上的工作目设置为/localhostdir。</p>
-<p>在/localhostdir中，你还要创建以下目录:</p>
-<ul>
-<li><code>entity</code>:这将存储一个我们称为“entity”的实体。建议里面的私有内容在与internet保持断开连接的计算机上使用，这样才保证安全</li>
-</ul>
-<p>目录的权限应该是<code>rwx------</code></p>
-<ul>
-<li><code>node</code>:这将存储一个我们称为“node”的节点。这个目录的名字并不重要，它只是表示一个节点。你可以任意重命名它。该目录的私有内容将在节点本身上使用。</li>
-</ul>
-<p>你应该使用<code>Entity</code>的私钥在系统上初始化此信息。</p>
-<p>目录权限应该是<code>rwx------</code></p>
-<p>关于Linux的权限说明，这里有一篇博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_24879495/article/details/78411497">Linux系统rwx权限详解</a></p>
-<p>要创建目录结构，请使用以下命令:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -m700 -p &#123;entity,node&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="复制创世文件"><a href="#复制创世文件" class="headerlink" title="复制创世文件"></a>复制创世文件</h3><p>最新的创世纪文件可以在<a target="_blank" rel="noopener" href="https://docs.oasis.dev/operators/current-testnet-parameters.html">Current Testnet Parameters</a>找到。你应该下载最新<code>genesis.json</code>文件，将其复制到工作目录，并设置以下环境变量指向其路径：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GENESIS_FILE_PATH=/localhostdir/genesis.json</span><br></pre></td></tr></table></figure>
-
-<p>这将在以后生成transactions时用到。</p>
-<h3 id="初始化实体"><a href="#初始化实体" class="headerlink" title="初始化实体"></a>初始化实体</h3><p>如<a target="_blank" rel="noopener" href="https://docs.oasis.dev/operators/architectural-overview.html#entities-and-key-management">架构概述</a>中所述，实体对于网络上的操作节点至关重要，因为它控制着附加到网络上的特定个人或组织的stake。在未来，我们将支持通过HSMs使用实体密钥，以确保实体密钥不会被轻易破坏。</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 警告</span></span><br><span class="line">我们强烈建议你不要在Mainnet上使用当前进程生成的任何实体。</span><br><span class="line">在Public Testnet和staking competition期间，我们还建议你在没有网络连接的系统上生成实体，以便为实体密钥提供基本保护。</span><br></pre></td></tr></table></figure>
-
-<p>要初始化实体，只需从<code>/localhostdir/entity</code>:运行以下命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oasis-node registry entity init</span><br></pre></td></tr></table></figure>
-
-<p>这将在 <code>/localhostdir/entity</code>中生成三个文件:</p>
-<ul>
-<li><code>entity.pem</code>: 实体的私钥。<strong>永远不要公开这个，因为它可以用来转让STAKE</strong>。</li>
-<li><code>entity.json</code>: 这是发送到网络注册中心应用程序的未签名信息的JSON。</li>
-<li><code>entity_genesis.json</code>: 这个json对象包含了实体描述符，它已经被实体的私有密匙签名了，例如entity.pem。这意味着要共享以包含在Genesis块中。</li>
-</ul>
-<h3 id="初始化节点"><a href="#初始化节点" class="headerlink" title="初始化节点"></a>初始化节点</h3><p>当节点启动时，节点将自己注册到网络。但是，为了验证自身，实体签署了与节点关联的公钥。这允许在没有上传实体的私钥到internet的情况下进行节点注册。</p>
-<p>要初始化Validator节点，请注意将运行你的节点的服务器的静态IP，并从<code>/localhostdir/node</code>目录输入以下命令:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">STATIC_IP=&lt;YOUR-STATIC-IP&gt;</span><br><span class="line">oasis-node registry node init \</span><br><span class="line">  --signer file \</span><br><span class="line">  --signer.dir /localhostdir/entity \</span><br><span class="line">  --node.consensus_address <span class="variable">$STATIC_IP</span>:26656 \</span><br><span class="line">  --node.is_self_signed \</span><br><span class="line">  --node.role validator</span><br></pre></td></tr></table></figure>
-
-<p>这个命令将创建一个Validator节点的标识，以便它可以是一个自签名节点(这就是允许自注册的原因)。</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 注意</span></span><br><span class="line">有更多的节点初始化选项，你可以通过输入以下命令来探索:</span><br><span class="line">oasis-node registry node init --help</span><br></pre></td></tr></table></figure>
-
-<p>该命令将生成以下文件:</p>
-<ul>
-<li><code>consensus.pem</code>: 节点的一致私钥。 <strong>DO NOT SHARE</strong></li>
-<li><code>consensus_pub.pem</code>: 节点的一致公钥。</li>
-<li><code>identity.pem</code>: 节点的标识私钥。 <strong>DO NOT SHARE</strong></li>
-<li><code>identity_pub.pem</code>: 节点的标识公钥。</li>
-<li><code>node_genesis.json</code>: 如果希望在网络的genesis文件中包含该节点，则需要了解该节点的详细信息。</li>
-<li><code>p2p.pem</code>: 节点的libp2p私钥。 <strong>DO NOT SHARE</strong></li>
-<li><code>p2p_pub.pem</code>: 节点的libp2p公钥。</li>
-<li><code>tls_identity.pem</code>: 用于保护gRPC连接的节点的TLS私有密钥。<strong>DO NOT SHARE</strong></li>
-<li><code>tls_identity_cert.pem</code>: 节点的TLS证书，用于保护gRPC连接。</li>
-</ul>
-<h4 id="将节点添加到实体描述符"><a href="#将节点添加到实体描述符" class="headerlink" title="将节点添加到实体描述符"></a>将节点添加到实体描述符</h4><p>初始化节点之后，我们需要将它添加到实体描述符中，以便在节点启动时它可以正确地注册自己。</p>
-<p>在<code>/localhostdir/node</code>目录下执行以下命令:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">oasis-node registry entity update \</span><br><span class="line">  --signer.dir /localhostdir/entity \</span><br><span class="line">  --entity.node.descriptor node_genesis.json</span><br></pre></td></tr></table></figure>
-
-<p>这将更新<code>entity.json</code>中的实体描述符，并随后更新包含签名实体描述符的<code>entity_genesis.json</code>文件。</p>
-<h4 id="初始化其他节点"><a href="#初始化其他节点" class="headerlink" title="初始化其他节点"></a>初始化其他节点</h4><p>在Public Testnet的时候，网络将只有Validator，没有其他committees(没有计算，没有密钥管理，没有存储，等等)。</p>
-<p>此时，本文档不包括配置单个Validator之外的任何东西的说明。</p>
-<p>如果你想创建更多的Validator节点，你可以简单地重复上面的过程来初始化额外节点的构件，只需适当地重命名与特定节点相关的内容。</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 注意</span></span><br><span class="line">每个节点至少需要网络定义的最小堆栈数量(此时为100个令牌)。</span><br></pre></td></tr></table></figure>
-
-<h2 id="在服务器上运行Oasis节点"><a href="#在服务器上运行Oasis节点" class="headerlink" title="在服务器上运行Oasis节点"></a>在服务器上运行Oasis节点</h2><h3 id="设置Oasis节点的工作目录"><a href="#设置Oasis节点的工作目录" class="headerlink" title="设置Oasis节点的工作目录"></a>设置Oasis节点的工作目录</h3><p>在服务器上运行节点之前，我们需要确保有地方存储节点所需的文件。</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 注意</span></span><br><span class="line">我们将在整个文档中将服务器的工作目录引用为/serverdir。</span><br></pre></td></tr></table></figure>
-
-<h4 id="设置-serverdir-目录"><a href="#设置-serverdir-目录" class="headerlink" title="设置 /serverdir 目录"></a>设置 <code>/serverdir</code> 目录</h4><p>在<code>/serverdir</code> 目录中，我们将创建以下子目录:</p>
-<ul>
-<li><p><code>etc/</code> - 这是用来存储配置的</p>
-</li>
-<li><p><code>node/</code> - 用来存储节点的数据</p>
-</li>
-<li><p><code>node/entity/</code> - 这是用来存储节点实体的公共组件的</p>
-</li>
-</ul>
-<p>你可以通过执行以下命令来创建这个目录结构:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -m700 -p /serverdir/&#123;etc,node,node/entity&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="从-localhostdir复制节点构件"><a href="#从-localhostdir复制节点构件" class="headerlink" title="从 /localhostdir复制节点构件"></a>从 <code>/localhostdir</code>复制节点构件</h4><p>为了使节点注册正常工作(如<code>/localhostdir/entity.json</code>中定义的那样)，你必须复制在初始化节点部分中生成的节点组件。为此，通过安全通道(例如SSH)将以下文件从<code>/localhostdir/node</code>上传到<code>/serverdir/node</code>:</p>
-<ul>
-<li><code>consensus.pem</code></li>
-<li><code>consensus_pub.pem</code></li>
-<li><code>identity.pem</code></li>
-<li><code>identity_pub.pem</code></li>
-<li><code>p2p.pem</code></li>
-<li><code>p2p_pub.pem</code></li>
-<li><code>tls_identity.pem</code></li>
-<li><code>tls_identity_cert.pem</code></li>
-</ul>
-<p>复制后，请确保所有这些文件都具有 <code>0600</code> 权限，即只有其所有者具有 <code>read</code> 和 <code>write</code> 权限。</p>
-<p>为此，执行以下命令:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod -R 600 /serverdir/node/*.pem</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 重要</span></span><br><span class="line">你可能已经注意到，其中一些文件在初始化节点部分中被列出为 </span><br><span class="line">DO NOT SHARE </span><br><span class="line">将来，应该从HSM生成并引用这些密钥。然而，在HSM支持实现之前，这些密钥应该尽可能地在server上保证安全。</span><br></pre></td></tr></table></figure>
-
-<h4 id="从-localhostdir复制公共实体构件"><a href="#从-localhostdir复制公共实体构件" class="headerlink" title="从 /localhostdir复制公共实体构件"></a>从 <code>/localhostdir</code>复制公共实体构件</h4><p>我们还需要在  <code>server</code>上显示<code>/localhostdir</code>中的公共实体组件。 将本地主机上的 <code>/localhostdir/entity/entity.json</code>文件复制到<code>server</code>上的<code>/serverdir/node/entity/entity.json</code> 目录</p>
-<h4 id="将Genesis文件复制到server"><a href="#将Genesis文件复制到server" class="headerlink" title="将Genesis文件复制到server"></a>将Genesis文件复制到server</h4><p>最新的Genesis文件可以在 <a target="_blank" rel="noopener" href="https://docs.oasis.dev/operators/current-testnet-parameters.html">Current Testnet Parameters</a>中找到。你应该下载最新的<code>genesis.json</code> 文件并将其复制到<code>server</code>上的<code>/serverdir/etc/genesis.json</code> 路径下。</p>
-<h4 id="配置Oasis节点"><a href="#配置Oasis节点" class="headerlink" title="配置Oasis节点"></a>配置Oasis节点</h4><p>在运行Oasis节点时，有多种可用的选项。下面的YAML文件是网络上Validator节点的基本配置。</p>
-<p>在使用此配置之前，你应该收集以下信息来替换配置文件中出现的 <code>&#123; &#123; var_name &#125; &#125;</code>变量:</p>
-<ul>
-<li><code>&#123; &#123; external_address &#125; &#125;</code>: 注册此节点时使用的外部IP。</li>
-</ul>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 注意</span></span><br><span class="line">如果你使用的是Sentry Node，则应该使用该机器的公共IP。</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>&#123; &#123; seed_node_address &#125; &#125;</code>: 种子节点地址的形式为<code>ID@IP:port</code>。</li>
-</ul>
-<p>你可以在 <a target="_blank" rel="noopener" href="https://docs.oasis.dev/operators/current-testnet-parameters.html">Current Testnet Parameters</a>中找到当前的 Oasis Seed Node的地址。</p>
-<p>要使用此配置，请将其保存在<code>/serverdir/etc/config.yml</code>文件中，并将其作为<code>--config</code>标志的参数传递给<code>oasis-node</code>命令。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##</span></span><br><span class="line"><span class="comment"># Oasis Node Configuration</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># This file&#x27;s contents are derived from the command line arguments found in the</span></span><br><span class="line"><span class="comment"># root command of the oasis-node binary. For more information, execute:</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     oasis-node --help</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Settings on the command line that are separated by a dot all belong to the</span></span><br><span class="line"><span class="comment"># same nested object. For example, &quot;--foo.bar.baz hello&quot; would translate to:</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     foo:</span></span><br><span class="line"><span class="comment">#       bar:</span></span><br><span class="line"><span class="comment">#         baz: hello</span></span><br><span class="line"><span class="comment">##</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Set this to where you wish to store node data. The node&#x27;s artifacts</span></span><br><span class="line"><span class="comment"># should also be located in this directory.</span></span><br><span class="line"><span class="attr">datadir:</span> <span class="string">/serverdir/node</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Logging.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Per-module log levels are defined below. If you prefer just one unified log</span></span><br><span class="line"><span class="comment"># level, you can use:</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># log:</span></span><br><span class="line"><span class="comment">#   level: debug</span></span><br><span class="line"><span class="attr">log:</span></span><br><span class="line">  <span class="attr">level:</span></span><br><span class="line">    <span class="comment"># Per-module log levels. Longest prefix match will be taken. Fallback to</span></span><br><span class="line">    <span class="comment"># &quot;default&quot;, if no match.</span></span><br><span class="line">    <span class="attr">default:</span> <span class="string">debug</span></span><br><span class="line">    <span class="attr">tendermint:</span> <span class="string">warn</span></span><br><span class="line">    <span class="attr">tendermint/context:</span> <span class="string">error</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">JSON</span></span><br><span class="line">  <span class="comment"># By default logs are output to stdout. If you would like to output logs to</span></span><br><span class="line">  <span class="comment"># a file, you can use:</span></span><br><span class="line">  <span class="comment">#</span></span><br><span class="line">  <span class="comment"># file: /var/log/oasis-node.log</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Genesis.</span></span><br><span class="line"><span class="attr">genesis:</span></span><br><span class="line">  <span class="comment"># Path to the genesis file for the current version of the network.</span></span><br><span class="line">  <span class="attr">file:</span> <span class="string">/serverdir/etc/genesis.json</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Worker configuration.</span></span><br><span class="line"><span class="attr">worker:</span></span><br><span class="line">  <span class="attr">registration:</span></span><br><span class="line">    <span class="comment"># In order for the node to register itself, the entity.json of the entity</span></span><br><span class="line">    <span class="comment"># used to provision the node must be available on the node.</span></span><br><span class="line">    <span class="attr">entity:</span> <span class="string">/serverdir/node/entity/entity.json</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Consensus backend.</span></span><br><span class="line"><span class="attr">consensus:</span></span><br><span class="line">  <span class="comment"># Setting this to true will mean that the node you&#x27;re deploying will attempt</span></span><br><span class="line">  <span class="comment"># to register as a validator.</span></span><br><span class="line">  <span class="attr">validator:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Tendermint backend configuration.</span></span><br><span class="line"><span class="attr">tendermint:</span></span><br><span class="line">  <span class="attr">abci:</span></span><br><span class="line">    <span class="attr">prune:</span></span><br><span class="line">      <span class="comment"># WARNING: Use this carefully. Pruning blockchain state is resource intensive.</span></span><br><span class="line">      <span class="comment"># However, running with pruning disabled means you will eventually fill all</span></span><br><span class="line">      <span class="comment"># storage on your node.</span></span><br><span class="line">      <span class="comment"># See https://github.com/oasislabs/oasis-core/issues/2432 for more details.</span></span><br><span class="line">      <span class="comment">#</span></span><br><span class="line">      <span class="comment"># This configuration would cause your node to retain state from only the</span></span><br><span class="line">      <span class="comment"># latest 86400 blocks:</span></span><br><span class="line">      <span class="comment"># strategy: keep_n</span></span><br><span class="line">      <span class="comment"># num_kept: 86400</span></span><br><span class="line">      <span class="comment">#</span></span><br><span class="line">      <span class="attr">strategy:</span> <span class="string">none</span></span><br><span class="line">  <span class="attr">core:</span></span><br><span class="line">    <span class="attr">listen_address:</span> <span class="string">tcp://0.0.0.0:26656</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># The external IP that is used when registering this node to the network.</span></span><br><span class="line">    <span class="comment"># <span class="doctag">NOTE:</span> If you are using the Sentry node setup, this option should be</span></span><br><span class="line">    <span class="comment"># omitted.</span></span><br><span class="line">    <span class="attr">external_address:</span> <span class="string">tcp://&#123;&#123;</span> <span class="string">external_address</span> <span class="string">&#125;&#125;:26656</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">db:</span></span><br><span class="line">    <span class="attr">backend:</span> <span class="string">badger</span></span><br><span class="line">  <span class="attr">debug:</span></span><br><span class="line">    <span class="attr">addr_book_lenient:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># List of seed nodes to connect to.</span></span><br><span class="line">  <span class="comment"># <span class="doctag">NOTE:</span> You can add additional seed nodes to this list if you want.</span></span><br><span class="line">  <span class="attr">p2p:</span></span><br><span class="line">    <span class="attr">seed:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;<span class="template-variable">&#123;&#123; seed_node_address &#125;&#125;</span>&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="确保适当的权限"><a href="#确保适当的权限" class="headerlink" title="确保适当的权限"></a>确保适当的权限</h4><p>只有运行Oasis节点的进程的所有者才能访问<code>/serverdir/node</code>目录中的文件。oasis-node二进制文件确保该节点使用的文件拥有尽可能少的特权，这样你就不会在操作节点时不小心搬起石头砸自己的脚。</p>
-<p>为了确保设置了正确的权限，我们建议运行以下命令来删除所有非所有者的读/写/执行权限:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod -R go-r,go-w,go-x /serverdir</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意</strong></p>
-<p>需要说明的是，<code>oasis-node</code> binary二进制文件需要以下权限: </p>
-<ul>
-<li><code>700</code> 用于 <code>/serverdir/node</code>  目录</li>
-<li><code>700</code> 用于 <code>/serverdir/node/entity</code> 目录</li>
-<li><code>600</code> 用于所有的 <code>*.pem</code> 文件</li>
-</ul>
-<h3 id="启动Oasis节点"><a href="#启动Oasis节点" class="headerlink" title="启动Oasis节点"></a>启动Oasis节点</h3> <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 警告</span></span><br><span class="line">在以前的文档版本中，我们要求你在运行的Docker容器上打开端口</span><br><span class="line">42261。在某些配置中，我们注意到这个端口暴露于外部世界。这是不需要的，应该立即删除。保持那个港口开放是一种临时措施，通常是不安全的。请将该端口对公众关闭，不要以任何方式绑定到它。</span><br></pre></td></tr></table></figure>
-
-<p>你可以通过运行以下命令来启动节点:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oasis-node --config /serverdir/etc/config.yml</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 注意</span></span><br><span class="line">默认情况下，Oasis节点被配置为在前台运行。</span><br><span class="line">我们建议你在systemd或Supervisor等流程管理器中配置和使用它。</span><br></pre></td></tr></table></figure>
-
-<h3 id="验证与网络的连接"><a href="#验证与网络的连接" class="headerlink" title="验证与网络的连接"></a>验证与网络的连接</h3><p>作为启动服务器进程的一部分，缺省情况下，<code>oasis-node</code>二进制将在节点的<code>datadir</code>中设置一个内部unix套接字。此套接字可用于与节点通信并查询有关网络的详细信息。</p>
-<p>运行以下命令:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oasis-node registry entity list -a unix:/serverdir/node/internal.sock</span><br></pre></td></tr></table></figure>
-
-<p>如果这个命令失败，你将收到一个非零的退出码，你很可能没有连接到网络。如果它工作正常，它应该响应输出如下，但也可能有更多的内容：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CVzqFIADD2Ed0khGBNf4Rvh7vSNtrL1ULTkWYQszDpc=</span><br><span class="line">C5z1jB+FHB/QgtTITr6NKWpUs9QHwD11CG3v8tmuJ0g=</span><br><span class="line">DPbZomOIleFrvcJBZPl7y/wEB1w9Q569vAbb6Krl9fE=</span><br><span class="line">DVobZ8bWlOv2J6oHO0uITr5FPO5rIY2irdPNhByprHk=</span><br><span class="line">D2hqhJcmZnBmhw9TodOdoFPAjmRkpRatANCNHxIDHgA=</span><br></pre></td></tr></table></figure>
-
-<p>到达连接的节点后，可以继续下一节，因为你的节点还没有在Oasis Testnet上注册为Validator。</p>
-<h2 id="注册Testnet-Tokens"><a href="#注册Testnet-Tokens" class="headerlink" title="注册Testnet Tokens"></a>注册Testnet Tokens</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 注意</span></span><br><span class="line">如果你在2019/01/13 @ 00:00 UTC之前为任务提交了有效的实体包，则此步骤是不必要的。在这种情况下，你的实体将包含在Genesis文件中。</span><br></pre></td></tr></table></figure>
-
-<p>为了参与到Testnet中，你需要有一些tokens。你将使用这些tokens来注册你的实体并在网络上stake。</p>
-<p>为了得到代币，你需要在此<a target="_blank" rel="noopener" href="https://oasisfoundation.typeform.com/to/dlcekq">表格</a>上注册。填写表单时，它将要求你的实体的公钥。这与您的实体的帐户ID相同，可以在<code>/localhostdir/entity/entity</code> JSON文件中的<code>id</code>键中找到。</p>
-<p><strong>例子</strong></p>
-<p>在以下 <code>entity.json</code> 文件中， 实体的公钥为<code>TszGIrC1X08czcik0DgAnmGPzjf8pfQ47bgrjpTmbro=</code>.</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;id&quot;</span>: <span class="string">&quot;TszGIrC1X08czcik0DgAnmGPzjf8pfQ47bgrjpTmbro=&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;nodes&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;C93lKVNNkca3Oo9m1exiz22NvMBxxYjkyBrt2+eFAds=&quot;</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">&quot;registration_time&quot;</span>: <span class="number">1573585972</span>,</span><br><span class="line">  <span class="attr">&quot;allow_entity_signed_nodes&quot;</span>: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>填写完表格后，等待电子邮件通知你已经获得资金，然后再继续下一步。以下部分假设你已经获得了funded。</p>
-<h2 id="Staking-和注册"><a href="#Staking-和注册" class="headerlink" title="Staking 和注册"></a>Staking 和注册</h2><p><strong>注意</strong>：<em>如果你的实体在Genesis文件中列出，则不必执行此步骤。</em></p>
-<p><strong>注意</strong>：<em>如果你以前提交过标记或注册表事务，那么你的nonce可能与示例中使用的nonce不同。如果你不确定，请立即使用本指南检查你的帐户。</em></p>
-<p>一旦你获得了资金，你可以通过注册你的实体和节点来完成将你的节点连接到网络的过程，如下所述：</p>
-<h3 id="检查你的节点是否同步"><a href="#检查你的节点是否同步" class="headerlink" title="检查你的节点是否同步"></a>检查你的节点是否同步</h3><p>在进行任何事务之前，必须确保节点是同步的。在服务器上调用这个命令:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oasis-node control is-synced -a unix:/serverdir/node/internal.sock</span><br></pre></td></tr></table></figure>
-
-<p>如果你的节点是同步的，上面的命令应该输出：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node completed initial syncing</span><br></pre></td></tr></table></figure>
-
-<p>如果你的节点尚未同步，则需要等待才能继续。</p>
-<h3 id="在-localhost上生成一个Staking（托管）事务"><a href="#在-localhost上生成一个Staking（托管）事务" class="headerlink" title="在 localhost上生成一个Staking（托管）事务"></a>在 <code>localhost</code>上生成一个Staking（托管）事务</h3><p>你的实体的私钥应该在<code>localhost</code>上与internet断开连接。因此，你需要在<code>localhost</code>上生成以下事务。</p>
-<p><strong>警告</strong>：实体的私钥用于授权你的staking帐户上的交易。因此，它不应该出现在在线<code>server</code>上。</p>
-<p>对于Testnet，当前注册实体和将节点注册为Validator所需的最stake是100个令牌。因此，我们将生成一个托管事务，托管你自己实体上的100个令牌。</p>
-<p><strong>注意</strong>：Oasis节点的标记应用程序将标记标记的操作称为“托管”。</p>
-<p>在生成托管事务之前，你需要设置以下环境变量：</p>
-<ul>
-<li><p><code>GENESIS_FILE_PATH</code>: 指向 <code>localhost</code>中Genesis文件的路径 即：/localhostdir/genesis.json`。</p>
-</li>
-<li><p><code>ENTITY_DIR_PATH</code>: 本地主机上实体组件目录的路径，即：<code>/localhostdir/entity/</code>。</p>
-</li>
-<li><p><code>OUTPUT_TX_FILE_PATH</code>：包含输出的已签名事务的文件的路径。</p>
-<p>对于本指南，我们将使用<code>/localhostdir/signed-escrow.tx</code>.</p>
-</li>
-<li><p><code>ACCOUNT_ID</code>：实体的ID（public key）。</p>
-</li>
-</ul>
-<p><strong>注意</strong>：你可以在 <code>entity.json</code> 文件的ID字段中找到你的实体 <code>id</code> 。</p>
-<p>然后执行以下命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">oasis-node stake account gen_escrow \</span><br><span class="line">  --genesis.file <span class="variable">$GENESIS_FILE_PATH</span> \</span><br><span class="line">  --signer file \</span><br><span class="line">  --signer.dir <span class="variable">$ENTITY_DIR_PATH</span> \</span><br><span class="line">  --stake.escrow.account <span class="variable">$ACCOUNT_ID</span> \</span><br><span class="line">  --stake.amount 100000000000 \</span><br><span class="line">  --transaction.file <span class="variable">$OUTPUT_TX_FILE_PATH</span> \</span><br><span class="line">  --transaction.fee.gas 1000 \</span><br><span class="line">  --transaction.fee.amount 1 \</span><br><span class="line">  --transaction.nonce 0</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意</strong>：选项<code>--stake.amount</code> 看起来是一个非常大的数字，但它实际上相当于Testnet上的100个Token，因为用于跟踪帐户余额的每个单位值是1x10^-9个令牌</p>
-<h3 id="生成-Entity-Registration-Transaction"><a href="#生成-Entity-Registration-Transaction" class="headerlink" title="生成 Entity Registration Transaction"></a>生成 Entity Registration Transaction</h3><p>提交你的托管帐户后，你需要注册你的实体，使你的节点注册正确。你可以在提交托管事务后执行此过程。然而，为了节省步骤，我们在生成register事务之前，需要设置以下环境变量：</p>
-<ul>
-<li><p><code>GENESIS_FILE_PATH</code>:本地主机上的Genesis文件的路径，即<code>/localhostdir/genesis.json</code>.</p>
-</li>
-<li><p><code>ENTITY_DIR_PATH</code>: 本地主机上实体工件目录的路径，即<code>/localhostdir/entity/</code>.</p>
-</li>
-<li><p><code>OUTPUT_REGISTER_TX_FILE_PATH</code>: 包含输出的签名事务的文件的路径。</p>
-<p>对于本指南，我们将使用 <code>/localhostdir/signed-register.tx</code>.</p>
-</li>
-</ul>
-<p>然后执行以下命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">oasis-node registry entity gen_register \</span><br><span class="line">  --genesis.file <span class="variable">$GENESIS_FILE_PATH</span> \</span><br><span class="line">  --signer file \</span><br><span class="line">  --signer.dir <span class="variable">$ENTITY_DIR_PATH</span> \</span><br><span class="line">  --transaction.file <span class="variable">$OUTPUT_REGISTER_TX_FILE_PATH</span> \</span><br><span class="line">  --transaction.fee.gas 1000 \</span><br><span class="line">  --transaction.fee.amount 1 \</span><br><span class="line">  --transaction.nonce 1</span><br></pre></td></tr></table></figure>
-
-<h3 id="在服务器上提交事务"><a href="#在服务器上提交事务" class="headerlink" title="在服务器上提交事务"></a>在服务器上提交事务</h3><p>为了完成标记过程，我们需要将生成的托管和注册表事务从脱机本地主机复制到服务器并提交它们。</p>
-<p>为此，请遵循以下步骤:</p>
-<ol>
-<li>将本地主机上的 <code>/localhostdir/signed-escrow.tx</code>文件复制到服务器上的<code>/serverdir/signed-escrow.tx</code>。</li>
-<li>将本地主机上的 <code>/localhostdir/signed-register.tx</code> 文件复制到服务器上<code>/serverdir/signed-register.tx</code> 。</li>
-<li>通过 <code>oasis-node consensus submit_tx</code> 子命令提交两个事务:</li>
-</ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">oasis-node consensus submit_tx \</span><br><span class="line">  --transaction.file /serverdir/signed-escrow.tx \</span><br><span class="line">  -a unix:/serverdir/node/internal.sock</span><br><span class="line">oasis-node consensus submit_tx \</span><br><span class="line">  --transaction.file /serverdir/signed-register.tx \</span><br><span class="line">  -a unix:/serverdir/node/internal.sock</span><br></pre></td></tr></table></figure>
-
-<h3 id="检查你的节点是否正确注册"><a href="#检查你的节点是否正确注册" class="headerlink" title="检查你的节点是否正确注册"></a>检查你的节点是否正确注册</h3><p>要确保你的节点作为网络上的Validator被正确连接，你可以运行以下命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oasis-node registry node is-registered -a unix:/serverdir/node/internal.sock</span><br></pre></td></tr></table></figure>
-
-<p>如果你的节点已注册，上面的命令应该输出：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node is registered</span><br></pre></td></tr></table></figure>
-
-<h2 id="You’re-a-Validator"><a href="#You’re-a-Validator" class="headerlink" title="You’re a Validator!"></a>You’re a Validator!</h2><p>如果你已经做到了这一点，那么你已经正确地将你的节点连接到网络，并且你现在是Public Testnett上的Validator。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/29/%E5%A6%82%E4%BD%95%E5%9C%A8Oasis%E7%BD%91%E7%BB%9C%E4%B8%8A%E4%B8%BAQuest%E8%BF%9B%E8%A1%8C%E8%8A%82%E7%82%B9%E8%AE%BE%E7%BD%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-从0开始搭建自己的个人博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/28/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">从0开始搭建自己的个人博客</a>
-    </h1>
   
 
-        
-        <a href="/2020/02/28/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-02-28T15:14:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="从0开始搭建自己的个人博客"><a href="#从0开始搭建自己的个人博客" class="headerlink" title="从0开始搭建自己的个人博客"></a>从0开始搭建自己的个人博客</h1><p><strong>搭建个人博客的过程中肯定会出现各种问题，不必畏惧，网上解决方案很多，大不了重来一次</strong></p>
-<p><strong>先把博客搭建起来，再考虑内容和页面美观和交互效果等</strong></p>
-<p><strong>这里用的是HEXO博客框架</strong></p>
-<h2 id="一、部署环境"><a href="#一、部署环境" class="headerlink" title="一、部署环境"></a>一、部署环境</h2><h3 id="安装Node-js和npm"><a href="#安装Node-js和npm" class="headerlink" title="安装Node.js和npm"></a>安装Node.js和npm</h3><p>下载网址:<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">Node.js官方网址</a></p>
-<p>进入官网<strong>下载LTS版本</strong>并安装，此安装会把<strong>Node.js</strong>和<strong>npm</strong>一并安装</p>
-<p>打开终端输入<strong>sudo su</strong>，输入密码后进入root用户出现：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh-3.2# </span><br></pre></td></tr></table></figure>
-
-
-
-<p>在终端检查<strong>Node.js</strong>和<strong>npm</strong>是否安装成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sh-3.2# node -v </span><br><span class="line">v12.14.0 #说明node.js已经安装成功</span><br><span class="line">sh-3.2# npm -v</span><br><span class="line">6.13.4 #说明npm已经安装成功</span><br></pre></td></tr></table></figure>
-
-<h3 id="安装HEXO博客框架"><a href="#安装HEXO博客框架" class="headerlink" title="安装HEXO博客框架"></a>安装HEXO博客框架</h3><p>借助<strong>npm</strong>包管理器来安装，由于<strong>npm</strong>默认镜像源在国内安装网速受限，所以先用<strong>npm</strong>安装<strong>cnpm</strong>，输入命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh-3.2# npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-
-<p>等待安装成功，安装完成后查看版本</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sh-3.2# cnpm -v</span><br><span class="line">cnpm@6.1.1 (&#x2F;usr&#x2F;local&#x2F;lib&#x2F;node_modules&#x2F;cnpm&#x2F;lib&#x2F;parse_argv.js)</span><br><span class="line">npm@6.14.1 (&#x2F;usr&#x2F;local&#x2F;lib&#x2F;node_modules&#x2F;cnpm&#x2F;node_modules&#x2F;npm&#x2F;lib&#x2F;npm.js)</span><br><span class="line">node@12.14.0 (&#x2F;usr&#x2F;local&#x2F;bin&#x2F;node)</span><br><span class="line">npminstall@3.27.0 (&#x2F;usr&#x2F;local&#x2F;lib&#x2F;node_modules&#x2F;cnpm&#x2F;node_modules&#x2F;npminstall&#x2F;lib&#x2F;index.js)</span><br><span class="line">prefix&#x3D;&#x2F;usr&#x2F;local </span><br><span class="line">darwin x64 19.3.0 </span><br><span class="line">registry&#x3D;https:&#x2F;&#x2F;r.npm.taobao.org</span><br></pre></td></tr></table></figure>
-
-<p>输入命令用<strong>cnpm</strong>安装<strong>HEXO</strong>博客框架</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh-3.2# cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p>等待安装完成，同样使用命令<strong>hexo -v</strong>验证安装成功与否</p>
-<p>建立一个存放博客文件的空文件夹blog，并进入</p>
-<figure class="highlight mak"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sh-3.2<span class="comment"># mkdir blog</span></span><br><span class="line">sh-3.2<span class="comment"># cd blog</span></span><br></pre></td></tr></table></figure>
-
-<p>接下来的工作都是在blog中进行各种命令操作</p>
-<h2 id="二、初始化个人博客"><a href="#二、初始化个人博客" class="headerlink" title="二、初始化个人博客"></a>二、初始化个人博客</h2><p>初始化<strong>HEXO</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh-3.2# sudo hexo init</span><br></pre></td></tr></table></figure>
-
-<p>经过一段时间等待初始化完成，输入<strong>ls -l</strong>命令可以查看到目录结构</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">sh-3.2# ls -l</span><br><span class="line">total 384</span><br><span class="line">drwxr-xr-x   13 root  staff     416  2 28 22:07 .deploy_git</span><br><span class="line">-rw-r--r--    1 root  staff      65  2 28 17:51 .gitignore</span><br><span class="line">-rw-r--r--    1 root  staff    2820  2 28 20:34 _config.yml</span><br><span class="line">-rw-r--r--    1 root  staff   46349  2 28 22:07 db.json</span><br><span class="line">drwxr-xr-x  268 root  staff    8576  2 28 20:24 node_modules</span><br><span class="line">-rw-r--r--    1 root  staff  131757  2 28 19:54 package-lock.json</span><br><span class="line">-rw-r--r--    1 root  staff     662  2 28 19:54 package.json</span><br><span class="line">drwxr-xr-x   12 root  staff     384  2 28 22:07 public</span><br><span class="line">drwxr-xr-x    5 root  staff     160  2 28 17:51 scaffolds</span><br><span class="line">drwxr-xr-x    3 root  staff      96  2 28 17:51 source</span><br><span class="line">drwxr-xr-x    4 root  staff     128  2 28 18:35 themes</span><br></pre></td></tr></table></figure>
-
-<p>启动博客</p>
-<figure class="highlight mak"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sh-3.2<span class="comment"># hexo s</span></span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
-
-<p>这时候他会在本地4000端口启动博客，在浏览器输入localhost:4000 可以看到博客已经成功生成在本地</p>
-<h2 id="三、写博客"><a href="#三、写博客" class="headerlink" title="三、写博客"></a>三、写博客</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sh-3.2# hexo new &quot;我的第一篇博客文章&quot;</span><br><span class="line">INFO  Created: &#x2F;Users&#x2F;chenchen&#x2F;blog&#x2F;source&#x2F;_posts&#x2F;我的第一篇博客文章.md #可以看到INFO信息提示的文件生成目录</span><br></pre></td></tr></table></figure>
-
-<p>输入<em>cd source/_posts</em>进入该目录再在命令行输入<em>ls</em>就可以看到博客文件，然后我们输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh-3.2# vim 我的第一篇博客文章</span><br></pre></td></tr></table></figure>
-
-<p>编辑文章，markdown格式编辑</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 我的第一篇博客</span><br><span class="line">date: 2020-02-28 18:01:04</span><br><span class="line">tags:</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">## 第一章</span><br><span class="line"></span><br><span class="line">内容</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">## 第二章</span><br><span class="line"></span><br><span class="line">内容</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">## 参考文献</span><br><span class="line"></span><br><span class="line">www.xxx.com</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><em>wq</em>保存退出。</p>
-<p>此时我们所在位置为_posts目录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sh-3.2# pwd</span><br><span class="line">&#x2F;Users&#x2F;chenchen&#x2F;blog&#x2F;source&#x2F;_posts</span><br></pre></td></tr></table></figure>
-
-<p>接下来我们要进入blog目录</p>
-<p>*cd ../..*进入blog目录在这个目录输入一些hexo命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh-3.2# hexo g #g 顾名思义generate生成</span><br></pre></td></tr></table></figure>
-
-<p>HEXO启动</p>
-<figure class="highlight mak"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh-3.2<span class="comment"># hexo s #start</span></span><br></pre></td></tr></table></figure>
-
-<p>浏览器输入localhost:4000就可以看到第一篇博客的成功生成</p>
-<h2 id="四、把个人博客部署到远端"><a href="#四、把个人博客部署到远端" class="headerlink" title="四、把个人博客部署到远端"></a>四、把个人博客部署到远端</h2><p>接下来说明如何将我们自己的博客部署到GitHub上公开访问</p>
-<p>假设已经注册好GitHub账户</p>
-<p>进入<a target="_blank" rel="noopener" href="https://github.com/">GitHub官网</a>并登陆账户</p>
-<p>点击左上角**+**号，出现一个小菜单</p>
-<p>点击</p>
-<ul>
-<li>New repository</li>
-</ul>
-<p>在**Repository name **一栏输入新建远端博客的域名</p>
-<p>域名格式：github账户名.github.io</p>
-<p>填好域名后其他可以默认不填，点击<strong>Create repository</strong></p>
-<h3 id="接下来需要先在命令行安装git插件"><a href="#接下来需要先在命令行安装git插件" class="headerlink" title="接下来需要先在命令行安装git插件"></a>接下来需要先在命令行安装git插件</h3><p>回到刚才的命令行输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh-3.2# cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-
-<p>安装完成后在进入<strong>blog目录</strong>设置配置文件<em>_config.yml</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh-3.2# vim _config.yml</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight m"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  <span class="keyword">type</span>: git #此处添加<span class="string">&quot;git&quot;</span></span><br><span class="line">  repo: https://github.com/github账户名/github账户名.github.io.git #此处添加<span class="string">&quot;repo:刚才创建的仓库地址&quot;</span></span><br><span class="line">  branch: master #此处添加<span class="string">&quot;branch: master&quot;</span>，注意空格！！</span><br></pre></td></tr></table></figure>
-
-<p>config文件修改完成，**:wq**保存退出</p>
-<h3 id="使用命令部署到远端"><a href="#使用命令部署到远端" class="headerlink" title="使用命令部署到远端"></a>使用命令部署到远端</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh-3.2# hexo d </span><br></pre></td></tr></table></figure>
-
-<p>接下来需要输入GitHub账号密码就可以成功的部署到远端</p>
-<p>_posts/node_modules/ansi-styles/readme.md</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/28/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Mac环境下GitHub-SSH-keys的生成配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/28/Mac%E7%8E%AF%E5%A2%83%E4%B8%8BGitHub-SSH-keys%E7%9A%84%E7%94%9F%E6%88%90%E9%85%8D%E7%BD%AE/">Mac环境下GitHub SSH keys的生成配置</a>
-    </h1>
   
 
-        
-        <a href="/2020/02/28/Mac%E7%8E%AF%E5%A2%83%E4%B8%8BGitHub-SSH-keys%E7%9A%84%E7%94%9F%E6%88%90%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2020-02-28T13:53:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Mac下GitHub的SSH-keys-生成配置"><a href="#Mac下GitHub的SSH-keys-生成配置" class="headerlink" title="Mac下GitHub的SSH keys 生成配置"></a>Mac下GitHub的SSH keys 生成配置</h1><h2 id="进入Mac终端，输入命令"><a href="#进入Mac终端，输入命令" class="headerlink" title="进入Mac终端，输入命令"></a>进入Mac终端，输入命令</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/.ssh #检查本机的ssh密钥</span><br></pre></td></tr></table></figure>
-
-<p>如果提示<strong>No such file or directory</strong> 说明你是第一次使用</p>
-<h2 id="接下来生成新的SSH-key："><a href="#接下来生成新的SSH-key：" class="headerlink" title="接下来生成新的SSH key："></a>接下来生成新的SSH key：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;你的邮箱地址&quot;</span><br><span class="line">Generating public&#x2F;private rsa key pair.</span><br><span class="line">Enter file in which to save the key (&#x2F;Users&#x2F;your_user_directory&#x2F;.ssh&#x2F;id_rsa):&lt;回车&gt;</span><br><span class="line">Enter passphrase (empty for no passphrase):&lt;输入加密串&gt;&lt;如不想设置密码可直接回车表示为空&gt;</span><br><span class="line">Enter same passphrase again:&lt;再次输入加密串&gt;&lt;接着回车确认&gt;</span><br><span class="line">Your identification has been saved in &#x2F;Users&#x2F;你的名字&#x2F;.ssh&#x2F;id_rsa).</span><br><span class="line">Your public key has been saved in &#x2F;Users&#x2F;你的名字&#x2F;.ssh&#x2F;id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">xx:xx:xx:xx:b1:f1:50:43:ad:20:a6:92:6a:1f:9a:3a &quot;你的邮箱地址&quot;</span><br></pre></td></tr></table></figure>
-
-<p>最后出现类似长方形的字符画即表示成功</p>
-<p>此处可能会遇到的几个问题：</p>
-<ul>
-<li>无法看到**.ssh**文件<br>解决方法：显示隐藏文件即可</li>
-<li>如果你要设置密码，输入密码时是不会有***字样的，直接输入就可以了<br>##将SSH key添加到GitHub中</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~&#x2F;.ssh #进入本机的ssh密钥目录</span><br></pre></td></tr></table></figure>
-
-<p>输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ls</span><br></pre></td></tr></table></figure>
-
-<p>可以看到目录下有<strong>id_rsa.pub</strong></p>
-<p>输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat id_rsa.pub</span><br></pre></td></tr></table></figure>
-
-<p>接下来会出现一串以<strong>ssh-rsa</strong>开头的字符串例如：</p>
-<p><strong>ssh-rsa AXXXB3NzaC1yc2XXXiL+ytQ/r8cwouFVky9gyezQQw98Lw7Ji9BCljS28mGT7+/8BzxEjuxYXXXXXXXO5YQOTJkefjSZxusS71YwsQgEsLq3jx4uyDjc/DS3R5lWSydhDoXLdKQWEzd6Oe1COUzaH8+NA8TKQvYUm0gghXXXXXXY5J/M4tN4Pr73VKe5BzHytcvMkKk94Zst0Dvy707GJdOt30dJ7N <a href="mailto:&#x58;&#88;&#x58;&#64;&#x58;&#x58;&#88;&#77;&#x61;&#x63;&#x42;&#111;&#x6f;&#x6b;&#45;&#x50;&#x72;&#x6f;&#46;&#x6c;&#x6f;&#99;&#x61;&#108;">&#x58;&#88;&#x58;&#64;&#x58;&#x58;&#88;&#77;&#x61;&#x63;&#x42;&#111;&#x6f;&#x6b;&#45;&#x50;&#x72;&#x6f;&#46;&#x6c;&#x6f;&#99;&#x61;&#108;</a></strong></p>
-<p>将这段字符串复制，进入GitHub主业，点击右上角头像进入settings，选择SSH and GPG keys，再点击New SSH Key。将内容复制进key，title可以为空。最后Add SSH key，点击后会让你输入你的GitHub账户密码，正确输入后一般来说就成功了</p>
-<h2 id="通过如下命令进行测试是否成功"><a href="#通过如下命令进行测试是否成功" class="headerlink" title="通过如下命令进行测试是否成功"></a>通过如下命令进行测试是否成功</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@GitHub.com #全部复制，无需更改</span><br></pre></td></tr></table></figure>
-
-<p>接下来会出现</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host &#39;github.com (xx.x50.177.x23)&#39; can&#39;t be established.</span><br><span class="line">RSA key fingerprint is SHA256:nxxxxxxxxxxxxpRomTxdCARLviKw6E5SY8.</span><br><span class="line">Are you sure you want to continue connecting (yes&#x2F;no)? yes #这里填入yes</span><br><span class="line">Warning: Permanently added &#39;github.com,13.250.177.223&#39; (RSA) to the list of known hosts.</span><br><span class="line">Hi XXXX! You&#39;ve successfully authenticated, but GitHub does not provide shell access. #成功！</span><br></pre></td></tr></table></figure>
-
-<p>完成</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/28/Mac%E7%8E%AF%E5%A2%83%E4%B8%8BGitHub-SSH-keys%E7%9A%84%E7%94%9F%E6%88%90%E9%85%8D%E7%BD%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我的第一篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-02-28T10:01:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容</p>
-<hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
-<hr>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a target="_blank" rel="noopener" href="http://www.xxx.com/">www.xxx.com</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/28/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/28/hello-world/" class="archive-article-date">
-  	<time datetime="2020-02-28T09:51:23.178Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/28/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -1296,8 +416,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
